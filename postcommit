@@ -1,0 +1,8 @@
+#!/bin/bash
+if ping -q -c 1 -W 1 google.com >/dev/null; then
+    echo "Network is up. Pushing to remote repository..."
+    git push
+    git push --tags
+else
+    echo "Network is down. Unable to push to remote repository."
+fi  
